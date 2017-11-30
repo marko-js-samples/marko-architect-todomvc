@@ -1,0 +1,23 @@
+{
+  "name": "marko-architect-todomvc",
+  "version": "1.0.0",
+  "description": "Sample application using Marko, Architect, and TodoMVC",
+  "main": "index.js",
+  "scripts": {
+    "create": "npm install && npm run arc-install && AWS_PROFILE=default AWS_REGION=us-east-1 arc-create",
+    "deploy": "AWS_PROFILE=default AWS_REGION=us-east-1 arc-deploy",
+    "start": "AWS_PROFILE=default AWS_REGION=us-east-1 NODE_ENV=testing arc-sandbox",
+    "arc-install": "arc-modules-install",
+    "arc-link": "arc-modules-link",
+    "arc-uninstall": "arc-modules-uninstall",
+    "arc-update": "arc-modules-update"
+  },
+  "license": "MIT",
+  "author": "Austin Kelleher <a@alk.im>",
+  "dependencies": {
+    "@architect/workflows": "^2.1.0",
+    "arc-plugin-marko": "^0.4.2",
+    "lasso": "3.0.1-1",
+    "marko": "4.5.3-2"
+  }
+}

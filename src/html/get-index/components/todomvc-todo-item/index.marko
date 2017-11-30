@@ -1,0 +1,29 @@
+$ var className = {
+  completed: input.completed,
+  editing: state.isEditing
+};
+
+<li class=className on-detach('handleDetach') on-attach('handleAttach')>
+  <div.view>
+    <input.toggle
+      type="checkbox"
+      checked=input.completed
+      aria-label="Toggle todo completed"
+      on-change("handleCheckboxChange") />
+
+    <label on-dblclick("handleLabelDblClick")>
+      ${input.title}
+    </label>
+
+    <button.destroy on-click("removeTodo")
+      aria-label="Delete todo"/>
+  </div>
+
+  <input.edit title="Enter the new todo title"
+    type="text"
+    value=state.editingTitle
+    key="titleInput"
+    on-blur('saveEdit')
+    on-change('saveEdit')
+    on-keydown('handleInputKeyDown') />
+</li>
