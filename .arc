@@ -1,5 +1,5 @@
 @app
-arcmarko-todomvc
+arcmarkotodomvc
 
 @html
 get /
@@ -7,4 +7,4 @@ get /
 @plugins
 arc-plugin-marko
   pages ./src/html/get-index/page.marko
-  bucket my-todomvc-bucket
+  bucket marko-todomvc-bucket
