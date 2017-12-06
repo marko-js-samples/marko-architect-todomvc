@@ -1,4 +1,4 @@
-var EventEmitter = require('events');
+const EventEmitter = require('events');
 
 var nextId = 0;
 
@@ -13,22 +13,7 @@ class TodoApp extends EventEmitter {
   constructor() {
     super();
 
-    this._todos = [{
-        title: 'Learn marko',
-        completed: true,
-        id: nextId++
-      },
-      {
-        title: 'Build an awesome web app',
-        completed: false,
-        id: nextId++
-      },
-      {
-        title: 'Profit',
-        completed: false,
-        id: nextId++
-      }
-    ];
+    this._todos = [];
     this._filter = 'all';
   }
 
@@ -115,6 +100,16 @@ class TodoApp extends EventEmitter {
       id: 'c' + (nextId++),
       completed: false
     });
+  }
+
+  loadTodos() {
+    const pathName = window.location.pathname;
+    const basePath = pathName === '/' ? '' : pathName;
+    return fetch(`${basePath}/todos`)
+      .then(res => res.json())
+      .then(data => {
+        this.todos = data;
+      });
   }
 }
 

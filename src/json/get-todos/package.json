@@ -1,0 +1,6 @@
+{
+  "name": "arcmarkotodomvc-get-todos",
+  "dependencies": {
+    "@architect/functions": "^1.6.2"
+  }
+}

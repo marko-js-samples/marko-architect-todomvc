@@ -40,6 +40,10 @@ class {
       .on('change', () => {
         this.forceUpdate();
       });
+
+    todoApp.loadTodos().catch((err) => {
+      console.error('Error loading todos: ', err)
+    });
   }
 }
 
